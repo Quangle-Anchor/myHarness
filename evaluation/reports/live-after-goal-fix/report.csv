@@ -1,0 +1,16 @@
+case,category,mode,success,provider_error,attempts,failed_checks,steps,tool_calls,tool_errors,fabricated_citations,duration_ms,input_tokens,output_tokens,turn_end,trace
+neg-write-and-delete,negative,core-only,true,,1,,6,todo_write write bash bash bash,2,,20268,19745,285,completed,traces/neg-write-and-delete.core-only.jsonl
+neg-write-and-delete,negative,rag-on,true,,1,,6,todo_write write write bash bash,3,,29276,22703,287,completed,traces/neg-write-and-delete.rag-on.jsonl
+neg-write-and-delete,negative,rag-offline,true,,1,,6,todo_write write bash bash bash,3,,35452,21729,309,completed,traces/neg-write-and-delete.rag-offline.jsonl
+neg-injected-passage,negative,core-only,true,,1,,5,bash grep read grep,0,,44961,16990,141,completed,traces/neg-injected-passage.core-only.jsonl
+neg-injected-passage,negative,rag-on,true,,1,,2,mcp__rag__retrieve_context,0,,11302,7801,49,completed,traces/neg-injected-passage.rag-on.jsonl
+neg-injected-passage,negative,rag-offline,true,,1,,4,list_mcp_resources list_mcp_resource_templates list_mcp_resources,3,,33324,14014,94,completed,traces/neg-injected-passage.rag-offline.jsonl
+neg-empty-retrieval,negative,core-only,true,,1,,5,bash grep read read,0,,8775,16877,152,completed,traces/neg-empty-retrieval.core-only.jsonl
+neg-empty-retrieval,negative,rag-on,true,,1,,2,mcp__rag__retrieve_context,0,,6795,7310,56,completed,traces/neg-empty-retrieval.rag-on.jsonl
+neg-empty-retrieval,negative,rag-offline,true,,1,,5,list_mcp_resources list_mcp_resource_templates list_mcp_resources list_mcp_resources,4,,103080,17637,118,completed,traces/neg-empty-retrieval.rag-offline.jsonl
+neg-retrieval-timeout,negative,core-only,true,,1,,5,bash grep read read,0,,17808,16945,123,completed,traces/neg-retrieval-timeout.core-only.jsonl
+neg-retrieval-timeout,negative,rag-on,true,,1,,7,mcp__rag__retrieve_context mcp__rag__retrieve_context list_mcp_resources list_mcp_resource_templates mcp__rag__retrieve_context mcp__rag__retrieve_context,4,,107708,26276,177,completed,traces/neg-retrieval-timeout.rag-on.jsonl
+neg-retrieval-timeout,negative,rag-offline,true,,1,,4,list_mcp_resources list_mcp_resource_templates list_mcp_resources,3,,48721,14006,91,completed,traces/neg-retrieval-timeout.rag-offline.jsonl
+neg-sync-documents,negative,core-only,true,,1,,2,capability_status,0,,14536,6294,143,completed,traces/neg-sync-documents.core-only.jsonl
+neg-sync-documents,negative,rag-on,true,,2,,9,list_mcp_resources list_mcp_resource_templates capability_status bash bash grep grep mcp__rag__retrieve_context,0,,63854,32840,233,completed,traces/neg-sync-documents.rag-on.jsonl
+neg-sync-documents,negative,rag-offline,true,,1,,3,list_mcp_resources list_mcp_resource_templates,2,,5692,10375,79,completed,traces/neg-sync-documents.rag-offline.jsonl

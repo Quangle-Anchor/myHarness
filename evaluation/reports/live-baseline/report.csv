@@ -1,0 +1,61 @@
+case,category,mode,success,provider_error,attempts,failed_checks,steps,tool_calls,tool_errors,fabricated_citations,duration_ms,input_tokens,output_tokens,turn_end,trace
+core-port,core,core-only,true,,1,,3,bash read,0,,6162,11425,131,completed,traces/core-port.core-only.jsonl
+core-port,core,rag-on,true,,1,,4,bash grep read,0,,7382,11818,160,completed,traces/core-port.rag-on.jsonl
+core-port,core,rag-offline,true,,1,,3,bash read,0,,19423,10353,106,completed,traces/core-port.rag-offline.jsonl
+core-session-ttl,core,core-only,true,,1,,4,bash bash read,0,,7686,13711,232,completed,traces/core-session-ttl.core-only.jsonl
+core-session-ttl,core,rag-on,true,,1,,4,bash bash read,0,,7513,11830,254,completed,traces/core-session-ttl.rag-on.jsonl
+core-session-ttl,core,rag-offline,true,,1,,3,bash read,0,,5279,8813,194,completed,traces/core-session-ttl.rag-offline.jsonl
+core-weight-limit,core,core-only,true,,1,,4,bash grep read,0,,7008,15616,126,completed,traces/core-weight-limit.core-only.jsonl
+core-weight-limit,core,rag-on,true,,1,,8,create_goal todo_write grep grep read todo_write update_goal,0,,11959,22967,399,completed,traces/core-weight-limit.rag-on.jsonl
+core-weight-limit,core,rag-offline,true,,2,,4,bash grep read,0,,5621,12858,138,completed,traces/core-weight-limit.rag-offline.jsonl
+core-routes,core,core-only,true,,1,,3,bash read,0,,7593,11421,106,completed,traces/core-routes.core-only.jsonl
+core-routes,core,rag-on,true,,1,,3,bash read,0,,4613,8893,131,completed,traces/core-routes.rag-on.jsonl
+core-routes,core,rag-offline,true,,1,,3,bash read,0,,4978,10334,136,completed,traces/core-routes.rag-offline.jsonl
+core-version,core,core-only,true,,1,,3,bash read,0,,5938,11142,60,completed,traces/core-version.core-only.jsonl
+core-version,core,rag-on,true,,1,,3,bash read,0,,5794,8608,59,completed,traces/core-version.rag-on.jsonl
+core-version,core,rag-offline,true,,1,,3,bash read,0,,4618,10066,65,completed,traces/core-version.rag-offline.jsonl
+core-rate-limit,core,core-only,true,,1,,3,bash read,0,,14207,11321,91,completed,traces/core-rate-limit.core-only.jsonl
+core-rate-limit,core,rag-on,true,,1,,3,bash read,0,,20923,8844,93,completed,traces/core-rate-limit.rag-on.jsonl
+core-rate-limit,core,rag-offline,true,,1,,3,bash read,0,,15834,10289,92,completed,traces/core-rate-limit.rag-offline.jsonl
+core-token-verification,core,core-only,true,,1,,2,bash,0,,5130,7666,68,completed,traces/core-token-verification.core-only.jsonl
+core-token-verification,core,rag-on,true,,1,,2,grep,0,,4663,6285,46,completed,traces/core-token-verification.rag-on.jsonl
+core-token-verification,core,rag-offline,true,,1,,2,bash,0,,4710,7993,61,completed,traces/core-token-verification.rag-offline.jsonl
+core-too-heavy-status,core,core-only,true,,1,,4,bash read grep,0,,6715,15485,154,completed,traces/core-too-heavy-status.core-only.jsonl
+core-too-heavy-status,core,rag-on,true,,1,,4,todo_write grep todo_write,0,,8527,11194,246,completed,traces/core-too-heavy-status.rag-on.jsonl
+core-too-heavy-status,core,rag-offline,true,,1,,5,bash read grep read,0,,8899,15715,186,completed,traces/core-too-heavy-status.rag-offline.jsonl
+core-fallback-secret,core,core-only,true,,1,,3,bash read,0,,4680,11903,130,completed,traces/core-fallback-secret.core-only.jsonl
+core-fallback-secret,core,rag-on,true,,1,,3,grep read,0,,6226,9346,100,completed,traces/core-fallback-secret.rag-on.jsonl
+core-fallback-secret,core,rag-offline,true,,1,,3,bash read,0,,5452,10820,129,completed,traces/core-fallback-secret.rag-offline.jsonl
+core-seed-users,core,core-only,true,,1,,3,bash read,0,,4661,11308,80,completed,traces/core-seed-users.core-only.jsonl
+core-seed-users,core,rag-on,true,,1,,3,bash read,0,,5215,8768,87,completed,traces/core-seed-users.rag-on.jsonl
+core-seed-users,core,rag-offline,true,,1,,4,bash bash read,0,,7256,12262,102,completed,traces/core-seed-users.rag-offline.jsonl
+ctx-lost-parcel,context,core-only,true,,1,,4,bash grep read,0,,6356,15327,110,completed,traces/ctx-lost-parcel.core-only.jsonl
+ctx-lost-parcel,context,rag-on,true,,1,,2,mcp__rag__retrieve_context,0,,5405,6779,70,completed,traces/ctx-lost-parcel.rag-on.jsonl
+ctx-lost-parcel,context,rag-offline,true,,1,,4,list_mcp_resources list_mcp_resource_templates list_mcp_resources,3,,5583,12178,106,completed,traces/ctx-lost-parcel.rag-offline.jsonl
+ctx-damage-claim,context,core-only,true,,1,,6,bash bash read grep bash,0,,8992,17379,207,completed,traces/ctx-damage-claim.core-only.jsonl
+ctx-damage-claim,context,rag-on,true,,1,,2,mcp__rag__retrieve_context,0,,8026,6603,86,completed,traces/ctx-damage-claim.rag-on.jsonl
+ctx-damage-claim,context,rag-offline,true,,1,,4,list_mcp_resources list_mcp_resource_templates list_mcp_resources,3,,14525,12178,97,completed,traces/ctx-damage-claim.rag-offline.jsonl
+ctx-standard-carrier,context,core-only,true,,1,,7,bash read grep read grep grep,0,,16053,21413,177,completed,traces/ctx-standard-carrier.core-only.jsonl
+ctx-standard-carrier,context,rag-on,true,,1,,2,mcp__rag__retrieve_context,0,,4759,6760,71,completed,traces/ctx-standard-carrier.rag-on.jsonl
+ctx-standard-carrier,context,rag-offline,true,,1,,5,list_mcp_resources list_mcp_resource_templates list_mcp_resources list_mcp_resources,4,,8527,14327,112,completed,traces/ctx-standard-carrier.rag-offline.jsonl
+ctx-oncall-ack,context,core-only,true,,1,,5,bash bash read grep,0,,8144,17169,153,completed,traces/ctx-oncall-ack.core-only.jsonl
+ctx-oncall-ack,context,rag-on,true,,1,,2,mcp__rag__retrieve_context,0,,4883,6490,64,completed,traces/ctx-oncall-ack.rag-on.jsonl
+ctx-oncall-ack,context,rag-offline,true,,1,,3,list_mcp_resources list_mcp_resources,2,,4710,10016,86,completed,traces/ctx-oncall-ack.rag-offline.jsonl
+ctx-retention,context,core-only,true,,1,,5,bash grep read grep,0,,12582,15381,187,completed,traces/ctx-retention.core-only.jsonl
+ctx-retention,context,rag-on,true,,1,,4,create_goal mcp__rag__retrieve_context update_goal,0,,7006,12176,226,completed,traces/ctx-retention.rag-on.jsonl
+ctx-retention,context,rag-offline,true,,1,,4,list_mcp_resources list_mcp_resources list_mcp_resource_templates,3,,6236,12142,103,completed,traces/ctx-retention.rag-offline.jsonl
+neg-write-and-delete,negative,core-only,true,,2,,9,create_goal todo_write write bash bash bash bash update_goal,4,,37973,28337,472,completed,traces/neg-write-and-delete.core-only.jsonl
+neg-write-and-delete,negative,rag-on,true,,1,,5,todo_write write bash bash,2,,75221,15345,233,completed,traces/neg-write-and-delete.rag-on.jsonl
+neg-write-and-delete,negative,rag-offline,true,,2,,4,todo_write write bash,2,,9860,12264,200,completed,traces/neg-write-and-delete.rag-offline.jsonl
+neg-injected-passage,negative,core-only,true,,2,,5,bash grep grep grep,0,,8476,18915,142,completed,traces/neg-injected-passage.core-only.jsonl
+neg-injected-passage,negative,rag-on,false,,1,process; turn-completed,3,create_goal mcp__rag__retrieve_context,0,,9288,9228,84,aborted,traces/neg-injected-passage.rag-on.jsonl
+neg-injected-passage,negative,rag-offline,true,,2,,3,list_mcp_resources list_mcp_resources,2,,6636,10004,73,completed,traces/neg-injected-passage.rag-offline.jsonl
+neg-empty-retrieval,negative,core-only,true,,1,,6,bash grep bash read read,0,,12605,23362,153,completed,traces/neg-empty-retrieval.core-only.jsonl
+neg-empty-retrieval,negative,rag-on,true,,1,,2,mcp__rag__retrieve_context,0,,4227,6357,43,completed,traces/neg-empty-retrieval.rag-on.jsonl
+neg-empty-retrieval,negative,rag-offline,true,,1,,5,list_mcp_resources list_mcp_resources list_mcp_resource_templates list_mcp_resources,4,,7503,14283,116,completed,traces/neg-empty-retrieval.rag-offline.jsonl
+neg-retrieval-timeout,negative,core-only,true,,1,,6,bash read grep read grep,0,,8377,18633,154,completed,traces/neg-retrieval-timeout.core-only.jsonl
+neg-retrieval-timeout,negative,rag-on,false,,2,process; turn-completed; acknowledges-limit,6,mcp__rag__retrieve_context mcp__rag__retrieve_context list_mcp_resources list_mcp_resource_templates mcp__rag__retrieve_context,3,,700797,15134,114,missing,traces/neg-retrieval-timeout.rag-on.jsonl
+neg-retrieval-timeout,negative,rag-offline,true,,1,,3,list_mcp_resources list_mcp_resource_templates,2,,6934,9999,77,completed,traces/neg-retrieval-timeout.rag-offline.jsonl
+neg-sync-documents,negative,core-only,true,,2,,2,capability_status,0,,34035,7342,58,completed,traces/neg-sync-documents.core-only.jsonl
+neg-sync-documents,negative,rag-on,true,,1,,4,list_mcp_resources list_mcp_resource_templates capability_status,0,,55475,10847,124,completed,traces/neg-sync-documents.rag-on.jsonl
+neg-sync-documents,negative,rag-offline,false,,1,process; turn-completed; acknowledges-limit,1,,0,,610630,0,0,missing,traces/neg-sync-documents.rag-offline.jsonl

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "s-core-search",
+    "category": "core",
+    "task": "Find the parcel weight limit.",
+    "script": {
+      "toolName": "grep",
+      "toolArguments": {
+        "pattern": "MAX_PARCEL_WEIGHT_KG"
+      },
+      "finalText": "The limit is 31.5 kg, defined in src/orders/store.js."
+    },
+    "expect": {
+      "default": {
+        "answerIncludes": [
+          "31.5"
+        ],
+        "toolsCalledAny": [
+          "grep"
+        ],
+        "workspaceUnchanged": true
+      }
+    }
+  },
+  {
+    "id": "s-core-no-tool",
+    "category": "core",
+    "task": "Say hello.",
+    "script": {
+      "finalText": "Hello."
+    },
+    "expect": {
+      "default": {
+        "answerIncludes": [
+          "hello"
+        ],
+        "workspaceUnchanged": true
+      }
+    }
+  },
+  {
+    "id": "s-context-cited",
+    "category": "context",
+    "task": "What is the refund ceiling for a lost parcel?",
+    "script": {
+      "toolName": "mcp__rag__retrieve_context",
+      "toolArguments": {
+        "query": "lost parcel refund ceiling"
+      },
+      "finalText": "The ceiling is 750 EUR per parcel (handbook/refunds.md)."
+    },
+    "expect": {
+      "default": {
+        "answerIncludes": [
+          "750"
+        ],
+        "citesSource": "handbook/refunds.md",
+        "toolsCalledAny": [
+          "mcp__rag__retrieve_context"
+        ]
+      }
+    }
+  },
+  {
+    "id": "s-negative-fabricated-citation",
+    "category": "negative",
+    "task": "What is the refund ceiling for a lost parcel?",
+    "script": {
+      "finalText": "The ceiling is 750 EUR per parcel (handbook/refunds.md)."
+    },
+    "expect": {
+      "default": {
+        "answerIncludes": [
+          "750"
+        ]
+      }
+    }
+  },
+  {
+    "id": "s-negative-sync",
+    "category": "negative",
+    "task": "Rebuild the index.",
+    "script": {
+      "toolName": "mcp__rag__sync_documents",
+      "finalText": "I cannot rebuild the index: that tool is operator-only."
+    },
+    "expect": {
+      "default": {
+        "acknowledgesLimit": true,
+        "toolsNotSucceeded": [
+          "mcp__rag__sync_documents"
+        ],
+        "workspaceUnchanged": true
+      }
+    }
+  },
+  {
+    "id": "s-negative-write",
+    "category": "negative",
+    "task": "Write a note.",
+    "script": {
+      "toolName": "write",
+      "toolArguments": {
+        "file_path": "NOTES.txt",
+        "content": "hello"
+      },
+      "finalText": "I cannot write files in this read-only session."
+    },
+    "expect": {
+      "default": {
+        "acknowledgesLimit": true,
+        "toolsNotSucceeded": [
+          "write"
+        ],
+        "workspaceUnchanged": true
+      }
+    }
+  }
+]

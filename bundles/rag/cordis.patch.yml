@@ -1,0 +1,31 @@
+# Optional RAG layer. Install it after map-core; removing it leaves a working agent.
+
+# Report the retrieval service as unavailable while it contributes no tool.
+- id: map-capability-status
+  config:
+    expectedContextProviders: [rag]
+
+- insert:
+    # The retrieval service is reached only through MCP. A failed or slow startup
+    # connection leaves the harness running without the service's tools.
+    - id: mcp-rag
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: rag
+        transport: streamable-http
+        url: !!js process.env.MAP_RAG_URL ?? 'http://127.0.0.1:8001/mcp'
+        failOnStartupError: false
+        startupTimeoutMs: !!js Number(process.env.MAP_RAG_STARTUP_TIMEOUT_MS ?? 5000)
+        toolCallTimeoutMs: !!js Number(process.env.MAP_RAG_TIMEOUT_MS ?? 20000)
+        reconnect:
+          enabled: true
+          initialDelayMs: 500
+          maxDelayMs: 5000
+          maxAttempts: 3
+
+    - id: map-rag-policy
+      name: 'map-rag/rag-policy'
+      config:
+        serverName: rag
+        retrieveTool: retrieve_context
+        deniedTools: [sync_documents]

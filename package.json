@@ -1,0 +1,17 @@
+{
+  "name": "modular-agent-platform",
+  "version": "0.1.0",
+  "description": "A plugin-first agent distribution over DeepSeek Harness with an optional RAG context provider and an evaluation suite",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.9.0" },
+  "scripts": {
+    "dsh": "./scripts/dsh.sh",
+    "doctor": "node scripts/doctor.ts",
+    "profiles": "./scripts/setup-profiles.sh",
+    "mock-rag": "node mock-rag/server.ts",
+    "test": "node --test --test-concurrency=2 \"tests/**/*.test.ts\"",
+    "test:unit": "node --test \"tests/unit/*.test.ts\"",
+    "eval": "node evaluation/runner/cli.ts"
+  }
+}

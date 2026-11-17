@@ -1,0 +1,19 @@
+{
+  "name": "map-core",
+  "version": "0.1.0",
+  "description": "Core distribution bundle: Gemini route, read-only default, no log upload, and the capability_status tool",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./capability-status": "./src/capability-status.ts",
+    "./package.json": "./package.json"
+  },
+  "files": ["src", "cordis.patch.yml"],
+  "engines": { "dsh": ">=0.2.2-rc.2 <0.3.0" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/schemastery": "*"
+  }
+}

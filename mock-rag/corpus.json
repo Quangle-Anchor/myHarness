@@ -1,0 +1,44 @@
+[
+  {
+    "chunk_id": "handbook/refunds.md:chunk-2",
+    "source": "handbook/refunds.md",
+    "title": "Refund policy",
+    "location": "section 2: Lost parcels",
+    "text": "A parcel is treated as lost after 9 working days without a carrier scan. Lost parcels are refunded in full within 4 working days of the claim, up to a ceiling of 750 EUR per parcel."
+  },
+  {
+    "chunk_id": "handbook/refunds.md:chunk-3",
+    "source": "handbook/refunds.md",
+    "title": "Refund policy",
+    "location": "section 3: Damaged parcels",
+    "text": "Damage claims need a photo of the packaging and must be filed within 14 calendar days of delivery. Approved damage claims are refunded at 80 percent of the declared value."
+  },
+  {
+    "chunk_id": "handbook/carriers.md:chunk-1",
+    "source": "handbook/carriers.md",
+    "title": "Carrier agreements",
+    "location": "section 1: Service levels",
+    "text": "The standard carrier, Northwind Freight, commits to delivery within 3 working days inside the country and 7 working days cross-border. The express carrier, Halcyon Express, commits to next-day delivery for parcels under 10 kg."
+  },
+  {
+    "chunk_id": "handbook/carriers.md:chunk-4",
+    "source": "handbook/carriers.md",
+    "title": "Carrier agreements",
+    "location": "section 4: Heavy parcels",
+    "text": "Parcels above 31.5 kg are handed to the freight desk, which quotes a price manually. The freight desk answers quote requests within one working day."
+  },
+  {
+    "chunk_id": "handbook/oncall.md:chunk-1",
+    "source": "handbook/oncall.md",
+    "title": "On-call guide",
+    "location": "section 1: Escalation",
+    "text": "The on-call engineer acknowledges a page within 15 minutes. If the tracking API error rate stays above 2 percent for 10 minutes, the incident is escalated to the platform lead."
+  },
+  {
+    "chunk_id": "handbook/data-retention.md:chunk-1",
+    "source": "handbook/data-retention.md",
+    "title": "Data retention",
+    "location": "section 1: Order records",
+    "text": "Order records are kept for 26 months after delivery and then anonymised. Session tokens are never written to logs."
+  }
+]

@@ -1,0 +1,67 @@
+# Core distribution layer over @deepseek-ai/dsh-base.
+# A patch replaces a row's whole `config`, so each override restates every key the row needs.
+
+# Gemini through the pi-ai adapter. The key is a credential reference, never a literal.
+- id: llm-pi-ai
+  config:
+    providers:
+      google:
+        apiKeyEnv: GEMINI_API_KEY
+
+- id: agent-default-model
+  config:
+    provider: google
+    model: !!js process.env.MAP_MODEL ?? 'gemini-3.1-flash-lite'
+
+# No session content leaves the machine except the model request itself.
+- id: session-log-deepseek
+  config:
+    enabled: false
+
+# Plain newline-delimited session logs, so trace export and evaluation read them without the backend.
+# One root holds one encoding, so these logs get their own root beside any compressed upstream sessions.
+- id: session-persistence-jsonl
+  config:
+    root: !!js dshHomePath('sessions-plain')
+    compression: none
+
+# web_fetch and web_search run without approval in every permission mode and can reach loopback hosts.
+- id: tool-web
+  disabled: true
+
+# Fresh sessions start read-only; the user switches presets explicitly to allow writes.
+- id: permission
+  config:
+    presets:
+      read-only:
+        sandbox: read-only
+        approval: ask
+      workspace-write:
+        sandbox: workspace-write
+        approval: ask
+      danger-full-access:
+        sandbox: danger-full-access
+        approval: never
+    defaultPreset: read-only
+
+- insert:
+    - id: map-capability-status
+      name: 'map-core/capability-status'
+
+# V1 is single-agent: delegation, team, and workflow tools stay out of the model's tool list.
+- id: tool-subagent
+  disabled: true
+- id: tool-subagent-fork
+  disabled: true
+- id: tool-subagent-control
+  disabled: true
+- id: tool-agent-team
+  disabled: true
+- id: tool-workflow
+  disabled: true
+
+# The goal tool arms an autonomous continuation loop (up to 256 rounds). In the baseline
+# evaluation a model armed it for a one-question task, and the one-shot run then ended with
+# an aborted follow-up turn. Continuation stays a human decision: the /goal command remains.
+- id: tool-goal
+  disabled: true

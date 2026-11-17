@@ -1,0 +1,4 @@
+# Evaluation-only overlay: a headless run shows no title, and the title request
+# would spend one model request per run against the provider's rate limit.
+- id: session-title-llm
+  disabled: true

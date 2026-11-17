@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# `dsh plugin` forwards to pnpm; this shim supplies the upstream-pinned pnpm through corepack
+# on machines that have no pnpm on PATH.
+export COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+exec corepack pnpm@11.28.5 "$@"

@@ -1,0 +1,10 @@
+{
+  "name": "map-web",
+  "version": "0.1.0",
+  "description": "Web UI layer of the distribution: one agent preset with the read-and-analyse tool set, replacing the shipped presets",
+  "private": true,
+  "type": "module",
+  "files": ["cordis.patch.yml"],
+  "engines": { "dsh": ">=0.2.2-rc.2 <0.3.0" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+}

@@ -1,0 +1,8 @@
+.dsh-home/
+node_modules/
+.env
+lib/
+evaluation/reports/tmp/
+*.log
+tests/.escape-target/
+evaluation/reports/*-latest/

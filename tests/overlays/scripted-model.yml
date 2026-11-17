@@ -1,0 +1,10 @@
+# Test-only overlay: route the agent to the upstream scripted Messages server
+# (DEEPSEEK_BASE_URL) so a test decides exactly which tool the "model" calls.
+- id: agent-default-model
+  config:
+    provider: deepseek-official
+    model: deepseek-flash
+
+# The title request would consume a scripted response.
+- id: session-title-llm
+  disabled: true
